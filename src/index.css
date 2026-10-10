@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Traveling light sheen sweep across buttons and metallic surfaces */
+@keyframes sheenSweep {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+  }
+  50%, 100% {
+    transform: translateX(280%) skewX(-25deg);
+  }
+}
+
+.animate-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: sheenSweep 3.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+.btn-3d-luxury-orange,
+.btn-cinema-orange {
+  background: linear-gradient(180deg, #ff8c1a 0%, #ff6a00 50%, #d84a00 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 2px 0 rgba(255, 255, 255, 0.45) inset,
+    0 -3px 0 rgba(110, 30, 0, 0.9) inset,
+    0 14px 30px -4px rgba(255, 106, 0, 0.55),
+    0 6px 14px rgba(0, 0, 0, 0.85);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-3d-luxury-orange:hover,
+.btn-cinema-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 2px 0 rgba(255, 255, 255, 0.6) inset,
+    0 -3px 0 rgba(110, 30, 0, 0.9) inset,
+    0 20px 38px -4px rgba(255, 106, 0, 0.75),
+    0 8px 18px rgba(0, 0, 0, 0.95);
+}
+
+.btn-3d-luxury-orange:active,
+.btn-cinema-orange:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 
+    0 1px 0 rgba(0, 0, 0, 0.3) inset,
+    0 6px 14px -2px rgba(255, 106, 0, 0.4);
+}
+
+/* 3D Cinema WhatsApp Button */
+.btn-cinema-whatsapp {
+  background: linear-gradient(180deg, #2fe675 0%, #25d366 50%, #128c46 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 2px 0 rgba(255, 255, 255, 0.45) inset,
+    0 -3px 0 rgba(10, 80, 40, 0.9) inset,
+    0 14px 30px -4px rgba(37, 211, 102, 0.55),
+    0 6px 14px rgba(0, 0, 0, 0.85);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cinema-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 2px 0 rgba(255, 255, 255, 0.6) inset,
+    0 -3px 0 rgba(10, 80, 40, 0.9) inset,
+    0 20px 38px -4px rgba(37, 211, 102, 0.75),
+    0 8px 18px rgba(0, 0, 0, 0.95);
+}
+
+.btn-cinema-whatsapp:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 
+    0 1px 0 rgba(0, 0, 0, 0.3) inset,
+    0 6px 14px -2px rgba(37, 211, 102, 0.4);
+}
+
+/* 3D Metallic Dark Button */
+.btn-3d-luxury-dark {
+  background: linear-gradient(180deg, #242424 0%, #151515 50%, #0c0c0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.9) inset,
+    0 12px 28px -6px rgba(0, 0, 0, 0.9);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-3d-luxury-dark:hover {
+  border-color: rgba(255, 106, 0, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.9) inset,
+    0 16px 34px -6px rgba(255, 106, 0, 0.3),
+    0 8px 18px rgba(0, 0, 0, 0.95);
+}
+
+.btn-3d-luxury-dark:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+/* Glowing text effects */
+.text-glow-orange {
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.65), 0 0 40px rgba(255, 140, 0, 0.35);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 16px rgba(255, 184, 0, 0.65);
+}
+
+/* 3D Glass card with metallic bevel */
+.glass-panel-3d {
+  background: linear-gradient(145deg, rgba(28, 28, 28, 0.85) 0%, rgba(14, 14, 14, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 24px 50px -12px rgba(0, 0, 0, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+.glass-panel-3d:hover {
+  border-color: rgba(255, 106, 0, 0.5);
+  box-shadow: 
+    0 28px 55px -10px rgba(255, 106, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.8);
+}
